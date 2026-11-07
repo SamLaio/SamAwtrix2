@@ -1,0 +1,15 @@
+services:
+  awtrix2:
+    build: .
+    image: awtrix2:latest
+    restart: unless-stopped
+    environment:
+      TZ: Asia/Taipei
+    ports:
+      - "7000:7000" # TCP：網頁管理介面與 HTTP API
+      - "7001:7001" # TCP：Matrix Port，實體 AWTRIX 時鐘連接伺服器
+      - "5568:5568/udp" # UDP：E1.31／sACN 燈光控制資料
+    volumes:
+      - awtrix2-data:/data
+volumes:
+  awtrix2-data:
