@@ -2,8 +2,6 @@ param([string]$Image = "awtrix2:latest")
 $ErrorActionPreference = 'Stop'
 Push-Location $PSScriptRoot
 try {
-    docker compose -f compose.yml config --quiet
-    if ($LASTEXITCODE -ne 0) { throw 'Local Compose validation failed.' }
     docker compose -f compose-example.yml config --quiet
     if ($LASTEXITCODE -ne 0) { throw 'NAS Compose validation failed.' }
     # Stub Java to check startup behavior without starting services.

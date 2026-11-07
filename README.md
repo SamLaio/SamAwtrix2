@@ -14,15 +14,14 @@ docker build --pull --platform linux/amd64 -t awtrix2:latest .
 
 Java 8 保留舊程式相容性。ARM NAS 請改為相符的平台建置。
 
-## 檢查與本機測試
+## 檢查
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File .\test.ps1
 ```
 
 測試驗證 Compose 設定，以及首次複製 JAR、保留既有 JAR、拒絕空 JAR。
-`docker compose up -d --build` 可啟動獨立本機測試資料；網頁位於 http://localhost:17000 。
-`docker compose down` 停止服務並保留測試資料。本機 bridge 測試不代表實體時鐘已驗證。
+GitHub 僅提供 `compose-example.yml` 部署範例；請複製並修改為自己的部署設定後使用。
 
 ## 發布到自己的 registry
 
@@ -34,7 +33,7 @@ docker tag awtrix2:latest registry.example.com/your-namespace/awtrix2:VERSION
 docker push registry.example.com/your-namespace/awtrix2:VERSION
 ```
 
-私人推送腳本 `pushDocker.bat` 與部署設定 `compose-online.yml` 僅留在本機，由 .gitignore 排除，不提交 GitHub。
+私人推送腳本 `pushDocker.bat` 與部署設定 `compose.yml`、`compose-online.yml` 僅留在本機，由 .gitignore 排除，不提交 GitHub。
 
 ## Synology 部署
 
