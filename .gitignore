@@ -12,3 +12,4 @@ compose-online*.yml
 .history/
 .codex-remote-attachments/
 graft/
+test.ps1

@@ -26,20 +26,6 @@ docker compose up -d --build
 若要沿用既有資料，將服務的 volumes 改為自己的 NAS 資料夾掛載到 `/data`，使用 File Station 顯示的 NAS 本機路徑，不可填 Windows 網路磁碟代號。
 更改掛載來源不會自動搬移資料，請先備份並確認來源。
 
-## 檢查
-
-```sh
-docker compose build
-```
-
-Windows 可執行：
-
-```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File .\test.ps1
-```
-
-檢查包含 Compose 設定、首次複製 JAR、保留既有 JAR，以及拒絕空 JAR。
-
 ## 更新與資料保留
 
 更新 Java 基底並重建：
@@ -56,7 +42,7 @@ docker compose up -d
 
 ## 私人設定與授權
 
-私人發布腳本 pushDocker.bat、私人部署檔 compose-online.yml、帳密、日誌、執行資料與第三方 JAR 均不提交 GitHub。
+本機檢查腳本 test.ps1、私人發布腳本 pushDocker.bat、私人部署檔 compose-online.yml、帳密、日誌、執行資料與第三方 JAR 均不提交 GitHub。
 
 本專案新增的 Dockerfile、腳本、Compose、測試與文件採 GNU GPL v3.0 only（SPDX: GPL-3.0-only），詳見 LICENSE。
 第三方 AWTRIX 2 程式、Java 基底與既有資源依各自原授權，不因本專案的 LICENSE 改為 GPLv3。
