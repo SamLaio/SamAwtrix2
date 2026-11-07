@@ -40,11 +40,11 @@ docker compose up -d
 資料夾中既有 awtrix.jar 優先，啟動時不覆寫；不存在時才複製映像內附版本。因此重建映像只更新執行環境，不會更新資料卷內既有的 AWTRIX 程式。
 更換 JAR 前先停止容器並備份資料，另行驗證相容性。回退映像不會還原執行資料。
 
-## 私人設定與授權
+## 相容性
 
-本機檢查腳本 test.ps1、私人發布腳本 pushDocker.bat、私人部署檔 compose-online.yml、帳密、日誌、執行資料與第三方 JAR 均不提交 GitHub。
+本專案提供 AWTRIX 2 的容器執行環境。時鐘韌體、Premium 授權及外部服務的相容性，仍取決於使用的 AWTRIX 2 版本。
 
-本專案新增的 Dockerfile、腳本、Compose、測試與文件採 GNU GPL v3.0 only（SPDX: GPL-3.0-only），詳見 LICENSE。
-第三方 AWTRIX 2 程式、Java 基底與既有資源依各自原授權，不因本專案的 LICENSE 改為 GPLv3。
+## 授權
 
-已驗證 linux/amd64 建置、隔離容器啟動及上述啟動邏輯。尚未驗證 NAS、實體時鐘與外部服務；舊程式的外部服務相容性不會因換基底自動修好。
+本儲存庫的建置設定、啟動腳本與文件採 [GNU GPL v3.0](LICENSE)（SPDX: GPL-3.0-only）。
+AWTRIX 2 程式與 Java 基底映像依各自的原授權提供。
