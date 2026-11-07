@@ -2,8 +2,6 @@
 *.tar
 *.zip
 
-# Third-party binary: keep local until redistribution rights are confirmed.
-awtrix.jar
 
 # Private publishing and deployment configuration.
 pushDocker.bat

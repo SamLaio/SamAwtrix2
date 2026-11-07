@@ -5,7 +5,7 @@
 
 ## 準備與啟動
 
-先將自己合法持有的 AWTRIX 2 `awtrix.jar` 放在 Dockerfile 同一層。GitHub 不包含第三方 JAR。
+專案已附 AWTRIX 2 `awtrix.jar`，下載或 clone 後即可建置，不需要另外尋找 JAR。
 在支援 Linux containers 的 Docker 環境中執行：
 
 ```sh
@@ -19,7 +19,7 @@ docker compose up -d --build
 
 ## Synology 建置與部署
 
-將專案與自己的 awtrix.jar 上傳 NAS，在 Container Manager「專案」使用專案資料夾中的 compose.yml 建置並啟動；不需要預先推送或登入映像管理系統。
+將完整專案（包含 awtrix.jar）上傳 NAS，在 Container Manager「專案」使用專案資料夾中的 compose.yml 建置並啟動；不需要預先推送或登入映像管理系統。
 啟動前停止舊容器並備份完整資料，避免連接埠衝突。
 
 預設使用 Docker 命名資料卷 `awtrix2-data`，全新資料卷會使用映像內附 JAR。
